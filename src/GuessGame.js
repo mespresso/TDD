@@ -1,30 +1,31 @@
-var test="321";
 function compare(number_a,number_b){
 	var number_a = number_a.toString();
 	var number_b = number_b.toString();
-	
 	return number_of_A(number_a,number_b)+'A'+number_of_B(number_a,number_b)+'B';
 }
 function number_of_A(number_a,number_b){
 	var number = 0;
 	for (var i = 3; i >= 0; i--) {
-		if(number_a[i]==number_b[i])
+		if(number_a[i]==number_b[i]){
 			number++;
+		}
 	};
 	return number;
 }
 function number_of_B(number_a,number_b){
 	var number = 0;
 	for (var i = 3; i >= 0; i--) {
-		if(in_it(number_a[i],number_b))
+		if(in_it(number_a[i],number_b)){
 			number++;
+		}
 	};
 	return number-number_of_A(number_a,number_b);
 }
 function in_it(input_number,target_number){
 	for (var i = target_number.length - 1; i >= 0; i--) {
-		if(target_number[i] == input_number)
+		if(target_number[i] == input_number){
 			return true;
+		}
 	};
 	return false;
 }
@@ -47,8 +48,9 @@ function one_random_number(){
 }
 function check_repeat_in_number(string){
 	for (var i = string.length - 1; i >= 0; i--) {
-		if(check_repeat_behind_it(i,string))
+		if(check_repeat_behind_it(i,string)){
 			return true;
+		}
 	};
 	return false;
 }
@@ -63,7 +65,7 @@ function check_repeat_behind_it(position,string){
 function Guess(random_func,compare_func){
 	this.random_func = random_func;
 	this.compare_func = compare_func;
-	this.guess_times = 0;
+	this.guess_times = 1;
 	this.random_number = random_func();
 }
 Guess.prototype.guess = function(guess_number){
@@ -72,9 +74,7 @@ Guess.prototype.guess = function(guess_number){
 		return "you win";
 	}
 	if (this.guess_times++<=6){
-
 		return this.compare_func(guess_number,this.random_number);
 	}
 	return "game over";
-
 }
