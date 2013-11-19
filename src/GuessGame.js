@@ -1,3 +1,4 @@
+var test="321";
 function compare(number_a,number_b){
 	var number_a = number_a.toString();
 	var number_b = number_b.toString();
