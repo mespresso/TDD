@@ -1,6 +1,6 @@
 describe("In every game,guess beyond 6 times or get the right answer,the game over",function(){
 	var guess_game,
-		random_movke_func;
+	    random_movke_func;
 
 	random_mock_func=function(){
 		return 2345;
