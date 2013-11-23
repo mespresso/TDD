@@ -1,6 +1,6 @@
 describe("In every game,guess beyond 6 times or get the right answer,the game over",function(){
 	var guess_game,
-	    random_movke_func;
+	    random_mock_func;
 
 	random_mock_func=function(){
 		return 2345;
@@ -16,7 +16,6 @@ describe("In every game,guess beyond 6 times or get the right answer,the game ov
 	});
 	
 	it("user guess the 7 time no win,game over",function(){
-		guess_game = new Guess(random_mock_func,compare_mock_func);
 		for (var i = 0; i < 7; i++) {
 			guess_game.guess(1234);
 		};

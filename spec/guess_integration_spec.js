@@ -1,7 +1,6 @@
 describe("user can guess a number compare with the random number",function(){
-	var guess,
-	random_movke_func,
-	compare_movke_func;
+	var random_mock_func,
+		compare_mock_func;
 
 	random_mock_func=function(){
 		return 4321;
@@ -12,11 +11,11 @@ describe("user can guess a number compare with the random number",function(){
 		}
 	}
 	it("1234 compare with random number(4321) will got 0A4B",function(){
-		guess = new Guess(random_mock_func,compare_mock_func);
+		var guess = new Guess(random_mock_func,compare_mock_func);
 		expect(guess.guess(1234)).toEqual("0A4B");
 	});
 	it("1234 compare with random number(4321) will got 0A4B",function(){
-		guess = new Guess(random_mock_func,compare);
+		var guess = new Guess(random_mock_func,compare);
 		expect(guess.guess(1234)).toEqual("0A4B");
 	});
 });
